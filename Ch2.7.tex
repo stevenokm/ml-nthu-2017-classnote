@@ -137,9 +137,13 @@ Eigendecomposition is a method that try to decomposit matrix into serval simple 
     \bm{A} = \bm{V} diag(\bm{\lambda}) \bm{V} ^ {-1}
   \end{equation}
 
+  \newpage
+
+  \item Real Symmetric Matrix Eigendecomposition
+
   % fig 2.3
   \setcounter{figure}{2}
-  \begin{figure}[h]
+  \begin{figure}[ht]
     \begin{center}
       Effect of eigenvectors and eigen values\par
       \begin{tikzpicture}[
@@ -210,10 +214,6 @@ Eigendecomposition is a method that try to decomposit matrix into serval simple 
     \end{center}
   \end{figure}
 
-  \newpage
-
-  \item Simple Eigendecomposition
-
   % eq 2.41
   \begin{equation} \tag{2.41}
     \label{eq_2_41}
@@ -221,13 +221,41 @@ Eigendecomposition is a method that try to decomposit matrix into serval simple 
   \end{equation}
 
   % TODO: Ch 2.7 page 42
-$f(\bm{x}) = \bm{x} ^ \top \bm{A} \bm{x}$
+  \eqref{eq_2_41} is derided from \eqref{eq_2_40}.
+  $\bm{Q}$ is an orthogonal matrix composed of eigenvectors of $\bm{A}$
+  , and $\bm{\Lambda}$ is a diagonal matrix which $\Lambda _ {i,i}$ is associated with the eigenvector in column $i$ of $\bm{Q}$.
+  Figure~\ref{fig:effect_of_eigenvectors_and_eigen_values} for the example.
 
-${\| \bm{x} \|} _ 2 = 1$
+  \newpage
 
-$\forall \bm{x}, \bm{x} ^ \top \bm{A} \bm{x} \geq 0$
+  \item Eigendecomposition Characteristics
 
-$\bm{x} ^ \top \bm{A} \bm{x} = 0 \Rightarrow \bm{x} = 0$
+  \begin{itemize}
+
+    \item Singular
+
+    matrix is singular $\iff \forall \lambda = 0$
+
+    \item Quadratic Expression Optimization
+
+    if ${\| \bm{x} \|} _ 2 = 1,\ f(\bm{x}) = \bm{x} ^ \top \bm{A} \bm{x}$ is optimal.
+    $\bm{x}$ is an eigenvector of $\bm{A}$, the $max(f(\bm{x}))$ is maximum eigenvalue, the $min(f(\bm{x}))$ is minimum eigenvalue.
+
+    \item Positive Definite, Positive Semidefinite, Negative Definite, and Negative Semidefinite
+    \begin{itemize}
+      \item Positive Definite: $\forall \lambda > 0$
+
+        Extra Characteristics: $\bm{x} ^ \top \bm{A} \bm{x} = 0 \Rightarrow \bm{x} = 0$
+
+      \item Positive Semidefinite: $\forall \lambda \geq 0$
+
+        Extra Characteristics: $\forall \bm{x}, \bm{x} ^ \top \bm{A} \bm{x} \geq 0$
+
+      \item Negative Definite: $\forall \lambda < 0$
+      \item Negative Semidefinite: $\forall \lambda \leq 0$
+    \end{itemize}
+
+  \end{itemize}
 
 \end{itemize}
 
