@@ -9,11 +9,21 @@
 \usepackage{bm}
 % package pgfplots
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.14}
+\pgfplotsset{compat=1.13}
 \usepgfplotslibrary{external}
 \usepackage{tikz}
 \usetikzlibrary{external}
 \tikzexternalize[prefix=FIG/]
+% package titlesec
+\usepackage{titlesec}
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\setcounter{secnumdepth}{4}
 % end of extra package
 
 \input{dfn}
@@ -29,15 +39,18 @@
 %\section{Ch2.1 Haha}
 %\label{Ch2.1}
 %\input{Ch2.1}
-\setcounter{section}{2}
-\setcounter{subsection}{6}
+%\setcounter{section}{2}
+%\setcounter{subsection}{6}
+%\renewcommand\thefigure{\thesection.\arabic{figure}}
+%\subsection{Eigendecomposition}
+%\label{Ch2.7}
+%\input{Ch2.7}
+\setcounter{section}{6}
+\setcounter{subsection}{1}
 \renewcommand\thefigure{\thesection.\arabic{figure}}
-\subsection{Eigendecomposition}
-\label{Ch2.7}
-\input{Ch2.7}
-%\section{Ch6.2 Gradient-Based Learning}
-%\label{Ch6.2}
-%\input{Ch6.2}
+\subsection{Gradient-Based Learning}
+\label{Ch6.2}
+\input{Ch6.2}
 %\section{Ch10.9 Leaky Units and Other Strategies for Multiple Time Scales}
 %\label{Ch10.9}
 %\input{Ch10.9}
