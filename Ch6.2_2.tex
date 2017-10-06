@@ -21,7 +21,71 @@
 \subsubsubsection{Softmax Units for Multinoulli Output Distributions}
 % 3.25p
 
-\subsubsubsection{Outher Output Types}
+  % eq 6.27
+  \begin{equation} \tag{6.27}
+    \label{eq_6_27}
+    \hat{y} = P( y=1\ |\ \bm{x} )
+  \end{equation}
+  % eq 6.28
+  \begin{equation} \tag{6.28}
+    \label{eq_6_28}
+    \bm{z} = \bm{W} ^ \top \bm{h} + \bm{b}
+  \end{equation}
+  % eq 6.29
+  \begin{equation} \tag{6.29}
+    \label{eq_6_29}
+    softmax( \bm{z} _ i ) = \frac{\ \exp(z_i) } {\ \sum _ j \exp(z_j) }
+  \end{equation}
+  % eq 6.30
+  \begin{equation} \tag{6.30}
+    \label{eq_6_30}
+    \log\ softmax( \bm{z} _ i ) = z_i - \log \sum _ j \exp(z_j)
+  \end{equation}
+  % eq 6.31
+  \begin{equation} \tag{6.31}
+    \label{eq_6_31}
+    {softmax( \bm{z}( \bm{x};\bm{\theta} ) )} _ i \approx
+      \frac{\ \sum ^ m _ {j=1} \bm{1} _ {y ^ {(j)} = i, \bm{x} ^ {(j)} = \bm{x}} }
+        {\ \sum ^ m _ {j=1} \bm{1} _ {\ \bm{x} ^ {(j)} = \bm{x}} }
+  \end{equation}
+  % eq 6.32
+  \begin{equation} \tag{6.32}
+    \label{eq_6_32}
+    softmax( \bm{z} ) = softmax( \bm{z} + c )
+  \end{equation}
+  % eq 6.33
+  \begin{equation} \tag{6.33}
+    \label{eq_6_33}
+    softmax( \bm{z} ) = softmax( \bm{z} - \max _ i (z _ i) )
+  \end{equation}
+
+\subsubsubsection{Other Output Types}
 % 3.75p
 
+  % eq 6.34
+  \begin{equation} \tag{6.34}
+    \label{eq_6_34}
+    diag(\bm{\beta})
+  \end{equation}
+  % eq 6.35
+  \begin{equation} \tag{6.35}
+    \label{eq_6_35}
+    p( \bm{y}\ |\ \bm{x} ) =
+      \sum ^ n _ {i=1} p( c=i\ |\ \bm{x} )
+      \mathcal{N}( \bm{y}; \bm{\mu} ^ {(i)} (\bm{x}), \bm{\Sigma} ^ {(i)} (\bm{x}) )
+  \end{equation}
 
+  % fig 2.3
+  \setcounter{figure}{3}
+  \begin{figure}[ht]
+    \begin{center}
+      \caption{Samples drawn from a neural network with a mixture density output layer.
+	The input $x$ is sampled from a uniform distribution,
+	and the output $y$ is sampled from $p _ {model} (y\ |\ x)$.
+	The neural network is able to learn nonlinear mappings from the input tothe parameters of the output distribution.
+        These parameters include the probabilities governing which of three mixture components will generate the output as well as theparameters for each mixture component.
+        Each mixture component is Gaussian with predicted mean and variance.
+        All these aspects of the output distribution are able to vary with respect to the input $x$,
+        and to do so in nonlinear ways.}\label{fig:NN_mixture_density_output_layer}
+    \end{center}
+  \end{figure}
