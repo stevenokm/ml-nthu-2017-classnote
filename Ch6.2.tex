@@ -2,21 +2,131 @@
 
 \subsubsection{Cost Function}
 % 0.5P
+To build the cost function, we use the cross-entropy between the training data and the model’s predictions. The total cost function combine the primary cost function with a regularization term.
 
 \subsubsubsection{Learning Conditional Distributions with Maximum Likelihood}
 % 1.25p
+Cost function is the negative log-likelihood, equivalently described as the cross-entropy between the training data and the model distribution.
+
+  % eq 6.12
+  \begin{equation} \tag{6.12}
+   \label{eq_6_12}
+   J(\theta)=-       \mathbb{E}_{x,y\sim\hat{\mathit{p}}_{data}}log\mathit{p}_{model}    (y\ |\   \bm{x})
+  \end{equation}
+
+The cost function changes depending on the specific form of $logp_{model}$.
+if $p_{model}(\bm{y}\  |\ \bm{x})=\mathcal{N}(\bm{y};\mathit{f}(\bm{x};\theta),\bm{I})$
+
+  % eq 6.13
+  \begin{equation} \tag{6.13}
+   \label{eq_6_13}
+   J(\theta)=\frac{1}{2}\mathbb{E}_{x,y\sim\hat{\mathit{p}}_{data}}\|\bm{y}\ -\ \mathit{f}(\bm{x};\theta)\|^2+const
+  \end{equation}
 
 \subsubsubsection{Learning Conditional Statistics}
 % 1.25p
+Using calculus of variations to solve the optimization problem.
+First result:
+
+  % eq 6.14
+  \begin{equation} \tag{6.14}
+   \label{eq_6_14}
+   \mathit{f}^*=\arg\min_{\mathit{f}}\ \mathbb{E}_{x,y\sim\mathit{p}_{data}}\|\bm{y}\ -\ \mathit{f}(\bm{x})\|^2
+  \end{equation}
+  
+  % eq 6.15
+  \begin{equation} \tag{6.15}
+   \label{eq_6_15}
+   \mathit{f}^*(\bm{x})=\mathbb{E}_{y\sim\mathit{p}_{data}(\bm{y}|\bm{x})}[\bm{y}]
+  \end{equation}
+  
+Second result:
+
+  % eq 6.16
+  \begin{equation} \tag{6.16}
+   \label{eq_6_16}
+   \mathit{f}^*=\arg\min_{\mathit{f}}\ \mathbb{E}_{x,y\sim\mathit{p}_{data}}\|\bm{y}\ -\ \mathit{f}(\bm{x})\|_1
+  \end{equation}
 
 \subsubsection{Output Units}
 % 0.5p
+$\bm{h}=\mathit{f}(\bm{x};\theta)$ defines a set of hidden features which is provided by the feedforward network.
 
 \subsubsubsection{Linear Units for Gaussian Output Distributions}
 % 0.5p
+Linear output units produces a vector $\hat{\bm{y}}=\bm{W}^\top\bm{h}+\bm{b}$
+Using Linear output layers to produce the mean of a conditional Gaussian distribution:
+
+  % eq 6.17
+  \begin{equation} \tag{6.17}
+   \label{eq_6_17}
+   \mathit{p}(\bm{y}\ |\ \bm{x})=\mathcal{N}(\bm{y};\hat{\bm{y}},\bm{I})
+  \end{equation}
 
 \subsubsubsection{Sigmoid Units for Bernoulli Output Distributions}
 % 2.25p
+The neural net needs to predict only $P(y=1\ |\ \bm{x})$ in a Bernoulli distribution.
+We use a linear unit and threshold its value to get a valid probability.
+
+  % eq 6.18
+  \begin{equation} \tag{6.18}
+   \label{eq_6_18}
+   P(y=1\ |\ \bm{x})=\max\{0,\min\{1,\bm{w}^\top\bm{h}+b\}\}
+  \end{equation}
+  
+A sigmoid output unit:
+
+  % eq 6.19
+  \begin{equation} \tag{6.19}
+   \label{eq_6_19}
+   \hat{y}=\sigma(\bm{w}^\top\bm{h}+b)
+  \end{equation}
+  
+Normalize to see this yields a Bernoulli distribution controlled by a sigmoidal transformation of z:
+
+  % eq 6.20
+  \begin{equation} \tag{6.20}
+   \label{eq_6_20}
+   \log\hat{P}{y}=yz
+  \end{equation}
+  
+  % eq 6.21
+  \begin{equation} \tag{6.21}
+   \label{eq_6_21}
+   \hat{P}(y)=\exp(yz)
+  \end{equation}
+  
+  % eq 6.22
+  \begin{equation} \tag{6.22}
+   \label{eq_6_22}
+   P(y)=\frac{\exp(yz)}{\sum_{y'=0}^{1}\exp(y'z)}
+  \end{equation}
+  
+  % eq 6.23
+  \begin{equation} \tag{6.23}
+   \label{eq_6_23}
+   P(y)=\sigma((2y-1)z)
+  \end{equation}
+  
+The loss function for maximum likelihood learning of a Bernoulli parametrized by a sigmoid:
+
+  % eq 6.24
+  \begin{equation} \tag{6.24}
+   \label{eq_6_24}
+   J(\theta)=-\log P(y\ |\ \bm{x})
+  \end{equation}
+  
+  % eq 6.25
+  \begin{equation} \tag{6.25}
+   \label{eq_6_25}
+   \ \ \ \ \ \ \ \ \ \ \ \ =-\log\sigma((2y-1)z)
+  \end{equation}
+  
+  % eq 6.26
+  \begin{equation} \tag{6.26}
+   \label{eq_6_26}
+   \ \ \ \ =\zeta((1-2y)z)
+  \end{equation}
 
 \input{Ch6.2_2}
 %\subsubsubsection{Softmax Units for Multinoulli Output Distributions}

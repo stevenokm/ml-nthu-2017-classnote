@@ -20,6 +20,8 @@
 
 \subsubsubsection{Softmax Units for Multinoulli Output Distributions}
 % 3.25p
+Softmax functions are often used as a classifier, to classified $n$ different classes.
+using maximum log-likelihood.
 
   % eq 6.27
   \begin{equation} \tag{6.27}
@@ -48,6 +50,7 @@
       \frac{\ \sum ^ m _ {j=1} \bm{1} _ {y ^ {(j)} = i, \bm{x} ^ {(j)} = \bm{x}} }
         {\ \sum ^ m _ {j=1} \bm{1} _ {\ \bm{x} ^ {(j)} = \bm{x}} }
   \end{equation}
+  Like the sigmoid, the softmax activation can saturate.
   % eq 6.32
   \begin{equation} \tag{6.32}
     \label{eq_6_32}
@@ -58,7 +61,9 @@
     \label{eq_6_33}
     softmax( \bm{z} ) = softmax( \bm{z} - \max _ i (z _ i) )
   \end{equation}
-
+  
+  At the extreme (when the difference between the maximal $a_i$ and the others is large in magnitude) it becomes a form of \textbf{winner-take-all}
+  
 \subsubsubsection{Other Output Types}
 % 3.75p
 
