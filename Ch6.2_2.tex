@@ -22,7 +22,7 @@
 % 3.25p
   Softmax functions are often used as a classifier, to classified $n$ different classes.
 
-  We want to gereralize the Bernoulli distribution to multinoulli distribution.
+  We want to generalize the Bernoulli distribution to multinoulli distribution.
 
   % eq 6.27
   \begin{equation} \tag{6.27}
@@ -63,7 +63,6 @@
   \end{equation}
 
   Like the sigmoid, the softmax function can saturate if the difference between its inputs is large.
-
 
   The softmax function's property:
 
@@ -118,13 +117,13 @@
 
       \item{Mixture components $p(c = i\ |\ \bm{x})$:}
 
-        A multinoulli distribution of $n$ different categories with protential variable $c$.
+        A multinoulli distribution of $n$ different categories with potential variable $c$.
 
       \item{Means $\bm{\mu} ^ {(i)} (\bm{x})$:}
 
         The mean of $i$-th Gaussian distribution.
 
-      \item{Convariances $\bm{\Sigma} ^ {(i)} (\bm{x})$:}
+      \item{Covariances $\bm{\Sigma} ^ {(i)} (\bm{x})$:}
 
         The covariance matrix of $i$-th Gaussian distribution.
 
@@ -142,8 +141,8 @@
         \caption{Samples drawn from a neural network with a mixture density output layer.
           The input $x$ is sampled from a uniform distribution,
           and the output $y$ is sampled from $p _ {model} (y\ |\ x)$.
-          The neural network is able to learn nonlinear mappings from the input tothe parameters of the output distribution.
-          These parameters include the probabilities governing which of three mixture components will generate the output as well as theparameters for each mixture component.
+          The neural network is able to learn nonlinear mappings from the input to the parameters of the output distribution.
+          These parameters include the probabilities governing which of three mixture components will generate the output as well as the parameters for each mixture component.
           Each mixture component is Gaussian with predicted mean and variance.
           All these aspects of the output distribution are able to vary with respect to the input $x$,
           and to do so in nonlinear ways.
