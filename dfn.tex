@@ -1,0 +1,143 @@
+%Here are TA pre-defined
+
+\newcommand{\DC}{Dr.\ Da-Cheng Juan}
+%The following are some notation you may use
+\newcommand{\Asca}{$\mathit{a}$}
+%A scalar (integer or real)
+\newcommand{\Avec}{$\bm{a}$}
+%A vector
+\newcommand{\Amatrix}{$\bm{A}$}
+%A matrix
+\newcommand{\Atensor}{\textsf{A}}
+%A tensor
+\newcommand{\nIM}{$I_n$}
+%Identity matrix with n rows and n columns
+\newcommand{\IM}{$I$}
+%Identity matrix with dimensionality implied by context
+\newcommand{\StaBasisVec}{$e^{(i)}$}
+%Standard basis vector [0,...,0,1,0,...,0] with a 1 at position i
+\newcommand{\diagA}{$diag(a)$}
+%A square, diagonal matrix with diagonal entries given by a
+\newcommand{\Ascarand}{\texttt{a}}
+%A scalar random variable
+\newcommand{\Avecrandom}{\texttt{\textbf{a}}}
+%A vector-valued random variable
+\newcommand{\Amatrixrandom}{\texttt{\textbf{A}}}
+%A matrix-valued random variable
+\newcommand{\Aset}{$\mathbb{A}$}
+%A set
+\newcommand{\realNumSet}{$\mathbb{R}$}
+%The set of real numbers
+\newcommand{\setZeroOne}{$\mathit{\{0,1\}}$}
+%The set containing 0 and 1
+\newcommand{\setN}{$\mathit{\{0,1,\ldots,n\}}$}
+%The set containing 0 and 1
+\newcommand{\intervalAB}{$\mathit{[a,b]}$}
+%The real interval including a and b
+\newcommand{\intervalexcAB}{$\mathit{(a,b]}$}
+%The real interval excluding a but including b
+\newcommand{\setSub}{$\mathbb{A}$ \textbackslash$\mathbb{B}$}
+%Set subtraction, i.e., the set containing the  elements of A that are nit in B
+\newcommand{\graph}{$\mathcal{G}$}
+%A graph
+\newcommand{\parentG}{$\mathit{Pa_\mathcal{G} (X_i)}$}
+%The parents of xi in G
+\newcommand{\elemiofveca}{$\mathit{a_i}$}
+%Element i of vector a, with indexing starting at 1
+\newcommand{\allelemofvecaexi}{$\mathit{a_{-i}}$}
+%All elements of vector a except for element i
+\newcommand{\matrixij}{$\mathit{A_{i,j}}$}
+%Element i,j of matrix A
+\newcommand{\rowi}{$\mathit{A_{i,:}}$}
+%Row i of matrix A
+\newcommand{\columni}{$\mathit{A_{:,i}}$}
+%Column i of matrix A
+\newcommand{\tensorijk}{$\mathrm{A_{\mathit{i},\mathit{j},\mathit{k}}}$}
+%Element (i,j,k) of a 3-D tensor A
+\newcommand{\twodenoftensor}{$\mathrm{A_{:,:,\mathit{i}}}$}
+%2-D slice of a 3-D tensor
+\newcommand{\randveci}{$\mathrm{a_{\mathit{i}}}$}
+%Element i of the random vector a
+\newcommand{\transA}{$\mathit{A^{\top}}$}
+%Transpose of matrix A
+\newcommand{\pesudoinverseA}{$\mathit{A^+}$}
+%Moore-Pen-rose pseudo-inverse of A
+\newcommand{\prductAB}{$\mathit{A \odot B}$}
+%Element-wise (Hadamard) product of A and B
+\newcommand{\detA}{$\mathit{\det(A)}$}
+%Determinant of A
+\newcommand{\derivative}{$\frac{\mathrm{d}y}{\mathrm{d}x}$}
+%Derivative of y with respect to x
+\newcommand{\partialDerivative}{$\frac{\mathrm{\partial}y}{\mathrm{\partial}x}$}
+%Partial derivative of y with respect to x
+\newcommand{\gradient}{$\nabla_{\mathit{x}} \mathrm{y}$}
+%Gradient of y with respect to x
+\newcommand{\matrixDeriative}{$\nabla \mathrm{x} \mathrm{y}$}
+%Matrix derivative of y with respect to X
+\newcommand{\tensoeDeriative}{$\nabla \textsf{x} \mathrm{y}$}
+%Tensor containing derivative of y with respect to X
+\newcommand{\jacobianMatrix}{$\frac{\mathrm{\partial}f}{\mathrm{\partial}x}$}
+%Jacobian matrix J ∈ R^(m*n) of f: R^n → R^m
+\newcommand{\hessianMatrix}{$\nabla_{\mathit{x}}^2 f(\mathit{x})$ or $\mathbf{H}(\mathit{f})(\mathit{x})$}
+%The Hessian matrix of f at input point x
+\newcommand{\intOverDomainX}{$\int {f(\mathit{x}) \mathrm{d}x}$}
+%Define integer over the entire domain of x
+\newcommand{\intOverSetS}{$\int_\mathbb{S} {f(\mathit{x}) \mathrm{d}x}$}
+%Define integer with respect to x over the set S
+\newcommand{\independantAB}{$a \perp b$}
+%The random variables a and b are independent
+\newcommand{\independantABGivenC}{$a \perp b \mid c$}
+%They are conditionally independent given c
+\newcommand{\probability}{$P(a)$}
+%A probability distribution over a discrete variables
+\newcommand{\probabiltyOverContinuousVariables}{$p(a)$}
+%A probability distribution over a continuous variable, or over a variable whose type has not been specified
+\newcommand{\randomVariable}{$a \sim P$}
+%Random variable a has distribution P
+\newcommand{\expectation}{${\mathbb{E}}_{x \sim P}[f(\mathit{x})]$ or $\mathbb{E}f(\mathit{x})$}
+%Expectation of f(x) with respect to P(x)
+\newcommand{\variance}{$\mathrm{Var}(f(\mathit{x}))$}
+%Variance of f(x) under P(x)
+\newcommand{\covariance}{$\mathrm{Cov}(f(\mathit{x}),g(\mathit{x}))$}
+%Covariance of f(x) and g(x) under P(x)
+\newcommand{\shannon}{$H(x)$}
+%Shannon entropy of the random variable x
+\newcommand{\kullbackleibler}{$D_{KL}(P \parallel Q)$}
+%Kullback-Leibler divergence of P and Q
+\newcommand{\gaussian}{$\mathcal{N}(\mathit{x},\mu, \Sigma)$}
+%Gaussian distribution over x with mean μ and covariance Σ
+\newcommand{\functionAtoB}{$f : \mathbb{A} \to \mathbb{B}$}
+%The function f with domain A and range B
+\newcommand{\compositionFG}{$f \circ g$}
+%Composition of the function f and g
+\newcommand{\parametrized}{$f(\mathit{x} ; \theta)$}
+%A function of x parametrized by θ. (Sometimes we write f(x) and omit the argument θ to lighten notation)
+\newcommand{\logx}{$\mathrm{\log} \mathit{x}$}
+%Natural logarithm of x
+\newcommand{\sigmoid}{$\sigma (\mathit{x})$}
+%Logistic sigmoid, 1/(1 + exp(-x))
+\newcommand{\softplus}{$\zeta(\mathit{x})$}
+%Soft-plus, log(1 + exp(x))
+\newcommand{\pnorm}{$\| \mathit{x} {\|}_{\mathit{p}}$}
+%L^p norm of x
+\newcommand{\twonorm}{$\| \mathit{x} \|$}
+%L^2 norm of x
+\newcommand{\positivepart}{${\mathit{x}}^+$}
+%Positive part of x, i.e., max(0,x)
+\newcommand{\condition}{$1_{condition}$}
+%is 1 if the condition is true, 0 otherwise
+\newcommand{\dataGneeratingP}{${\mathit{P}}_{\mathrm{data}}$}
+%The data generating distribution
+\newcommand{\pDefinedByTrainingSet}{${\hat{\mathit{P}}}_{data}$}
+%The empirical distribution defined by the training set
+\newcommand{\trainingEx}{$\mathbb{X}$}
+%The set of training examples
+\newcommand{\ithEx}{$\mathit{x}^{(\mathit{i})}$}
+%The i-th example (input) from a dataset
+\newcommand{\targetforSL}{${\mathit{y}}^{(\mathit{i})}$ or ${\bm{\mathit{y}}}^{(\mathit{i})}$}
+%The target associated with x^(i) for supervised learning
+\newcommand{\inputEx}{$\mathbf{X}$}
+%The m*n matrix with input example x^(i) in row X_(i,:)
+
+%Ch2.1
+%Ch3.1
